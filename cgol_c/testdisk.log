@@ -1,0 +1,294 @@
+
+
+Mon Dec  9 19:05:00 2024
+Command line: TestDisk
+
+TestDisk 7.1, Data Recovery Utility, July 2019
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 5.15.167.4-microsoft-standard-WSL2 (#1 SMP Tue Nov 5 00:21:55 UTC 2024) x86_64
+Compiler: GCC 13.2
+ext2fs lib: 1.47.0, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.4
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop0 - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop1 - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop2 - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop3 - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop4 - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop5 - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop6 - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop7 - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 407 MB / 388 MiB - CHS 49 255 63 (RO), sector size=512 - Msft Virtual Disk, FW:1.0
+Disk /dev/sdb - 1073 MB / 1024 MiB - CHS 130 255 63, sector size=512 - Msft Virtual Disk, FW:1.0
+Disk /dev/sdc - 1099 GB / 1024 GiB - CHS 133674 255 63, sector size=512 - Msft Virtual Disk, FW:1.0
+
+Partition table type (auto): None
+Media is opened in read-only.
+Partition table type (auto): None
+Disk /dev/sdb - 1073 MB / 1024 MiB - Msft Virtual Disk
+Partition table type: Intel
+Partition table type (auto): None
+Media is opened in read-only.
+Disk /dev/sda - 407 MB / 388 MiB (RO) - Msft Virtual Disk
+Partition table type: Intel
+
+Analyse Disk /dev/sda - 407 MB / 388 MiB - CHS 49 255 63 (RO)
+Current partition structure:
+
+Partition sector doesn't have the endmark 0xAA55
+
+search_part()
+Disk /dev/sda - 407 MB / 388 MiB - CHS 49 255 63 (RO)
+
+Results
+
+interface_write()
+ 
+No partition found or selected for recovery
+simulate write!
+
+write_mbr_i386: starting...
+Store new MBR code
+write_all_log_i386: starting...
+No extended partition
+
+Interface Advanced
+Partition table type (auto): None
+Disk /dev/sdb - 1073 MB / 1024 MiB - Msft Virtual Disk
+Partition table type: Intel
+
+Analyse Disk /dev/sdb - 1073 MB / 1024 MiB - CHS 130 255 63
+Current partition structure:
+
+Partition sector doesn't have the endmark 0xAA55
+
+search_part()
+Disk /dev/sdb - 1073 MB / 1024 MiB - CHS 130 255 63
+
+Results
+
+interface_write()
+ 
+No partition found or selected for recovery
+simulate write!
+
+write_mbr_i386: starting...
+Store new MBR code
+write_all_log_i386: starting...
+No extended partition
+Partition table type (auto): None
+Disk /dev/sdc - 1099 GB / 1024 GiB - Msft Virtual Disk
+Partition table type: None
+
+Interface Advanced
+
+recover_EXT2: s_block_group_nr=0/8192, s_mnt_count=242/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 268435456
+recover_EXT2: part_size 2147483648
+Filesystem created: Sat Oct  5 19:43:10 2024
+Last mount time:    Mon Dec  9 14:50:51 2024
+   P ext4                     0   0  1 133674 172  2 2147483648
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 1099 GB / 1024 GiB
+
+
+dir_partition inode=2
+   P ext4                     0   0  1 133674 172  2 2147483648
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 1099 GB / 1024 GiB
+Directory /
+       2 drwxr-xr-x     0      0      4096  9-Dec-2024 14:50 .
+       2 drwxr-xr-x     0      0      4096  9-Dec-2024 14:50 ..
+      11 drwx------     0      0     16384  5-Oct-2024 19:43 lost+found
+      12 lrwxrwxrwx     0      0         7 22-Apr-2024 15:08 bin
+    8193 drwxr-xr-x     0      0      4096 26-Feb-2024 13:58 bin.usr-is-merged
+    8194 drwxr-xr-x     0      0      4096 22-Apr-2024 15:08 boot
+   16385 drwxr-xr-x     0      0      4096 27-Sep-2024 22:12 dev
+   16386 drwxr-xr-x     0      0      4096  9-Dec-2024 19:04 etc
+   24577 drwxr-xr-x     0      0      4096  5-Oct-2024 19:54 home
+    1395 lrwxrwxrwx     0      0         7 22-Apr-2024 15:08 lib
+   24578 drwxr-xr-x     0      0      4096  8-Apr-2024 16:37 lib.usr-is-merged
+    1396 lrwxrwxrwx     0      0         9 22-Apr-2024 15:08 lib64
+   32769 drwxr-xr-x     0      0      4096 27-Sep-2024 22:13 media
+   32770 drwxr-xr-x     0      0      4096  5-Oct-2024 19:43 mnt
+   40961 drwxr-xr-x     0      0      4096 27-Sep-2024 22:13 opt
+   40962 drwxr-xr-x     0      0      4096 22-Apr-2024 15:08 proc
+   49153 drwx------     0      0      4096  6-Dec-2024 18:09 root
+   49154 drwxr-xr-x     0      0      4096 27-Sep-2024 22:13 run
+    1424 lrwxrwxrwx     0      0         8 22-Apr-2024 15:08 sbin
+   57345 drwxr-xr-x     0      0      4096 31-Mar-2024 11:00 sbin.usr-is-merged
+   57346 drwxr-xr-x     0      0      4096  5-Oct-2024 19:43 snap
+   65537 drwxr-xr-x     0      0      4096 27-Sep-2024 22:13 srv
+   65538 drwxr-xr-x     0      0      4096 22-Apr-2024 15:08 sys
+   73729 drwxrwxrwt     0      0     12288  9-Dec-2024 19:04 tmp
+   73730 drwxr-xr-x     0      0      4096  1-Dec-2024 08:59 usr
+ 33554433 drwxr-xr-x     0      0      4096  1-Dec-2024 18:45 var
+ 33554600 drwx------     0      0      4096  9-Oct-2024 16:01 wslomiKjl
+ 33554644 drwx------     0      0      4096  9-Oct-2024 16:01 wslmllmnl
+ 33557364 drwx------     0      0      4096  9-Oct-2024 16:01 wslkEEJpl
+ 33557412 drwx------     0      0      4096  9-Oct-2024 16:01 wsllCIoBm
+ 33557413 drwx------     0      0      4096  9-Oct-2024 16:01 wslAmJECm
+   46384 -rwxr-xr-x     0      0         0  9-Dec-2024 14:50 init
+ 33557428 drwx------     0      0      4096 30-Oct-2024 10:06 wslNpLHcJ
+ 33557439 drwx------     0      0      4096 30-Oct-2024 10:06 wslKjkgiJ
+ 33557610 drwx------     0      0      4096 30-Oct-2024 10:06 wslAehnnJ
+ 33557666 drwx------     0      0      4096 30-Oct-2024 10:06 wslcgikBK
+ 33557668 drwx------     0      0      4096 30-Oct-2024 10:06 wslIihLDK
+   88954 lrwxrwxrwx     0      0         9  1-Dec-2024 08:59 lib32
+
+dir_partition inode=24577
+   P ext4                     0   0  1 133674 172  2 2147483648
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 1099 GB / 1024 GiB
+Directory /home
+   24577 drwxr-xr-x     0      0      4096  5-Oct-2024 19:54 .
+       2 drwxr-xr-x     0      0      4096  9-Dec-2024 14:50 ..
+     686 drwxr-x---  1000   1000      4096  9-Dec-2024 18:50 ruthis
+
+dir_partition inode=686
+   P ext4                     0   0  1 133674 172  2 2147483648
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 1099 GB / 1024 GiB
+Directory /home/ruthis
+     686 drwxr-x---  1000   1000      4096  9-Dec-2024 18:50 .
+   24577 drwxr-xr-x     0      0      4096  5-Oct-2024 19:54 ..
+    1227 -rw-r--r--  1000   1000      4066  6-Oct-2024 10:12 .bashrc
+   46418 -rw-r--r--  1000   1000       828  5-Oct-2024 19:55 .profile
+   46421 -rw-r--r--  1000   1000       220  5-Oct-2024 19:54 .bash_logout
+   46406 drwx------  1000   1000      4096  6-Dec-2024 20:13 .cache
+   46423 -rw-r--r--  1000   1000         0  9-Dec-2024 08:29 .motd_shown
+   46426 drwxr-xr-x  1000   1000      4096  9-Dec-2024 18:57 .cargo
+   46434 drwxr-xr-x  1000   1000      4096  5-Oct-2024 19:55 .rustup
+  210257 -rw-------  1000   1000     25418  9-Dec-2024 18:50 .bash_history
+   46417 -rw-r--r--  1000   1000         0  5-Oct-2024 20:24 .sudo_as_admin_successful
+    3758 drwxr-xr-x  1000   1000      4096  6-Dec-2024 08:30 arch_tegra
+    1709 -rw-r--r--  1000   1000        80 12-Oct-2024 08:45 .gitconfig
+   89965 drwxr-xr-x  1000   1000      4096  7-Oct-2024 13:08 .config
+   90036 drwx------  1000   1000      4096  5-Oct-2024 20:31 .local
+  204034 -rw-------  1000   1000        67  8-Dec-2024 18:16 .git-credentials
+  130266 drwxr-xr-x  1000   1000      4096  6-Oct-2024 10:02 .espup
+  126220 drwxr-xr-x  1000   1000      4096  5-Oct-2024 22:59 local
+  302701 -rw-------  1000   1000      1273  6-Dec-2024 17:58 .viminfo
+   46409 drwxr-xr-x  1000   1000      4096  6-Oct-2024 09:05 .landscape
+  129976 -rw-r--r--  1000   1000       226  6-Oct-2024 10:11 export-esp.sh
+   12578 drwxr-xr-x  1000   1000      4096 19-Nov-2024 14:15 esp_cam
+   10836 drwxr-xr-x  1000   1000      4096  6-Dec-2024 17:58 .vim
+   89909 drwxr-xr-x  1000   1000      4096  7-Dec-2024 09:32 c_tuto
+  302718 drwxr-x---  1000   1000      4096  6-Dec-2024 20:15 .lldb
+  263312 -rw-------  1000   1000        20  3-Dec-2024 09:17 .lesshst
+  186766 drwxr-xr-x  1000   1000      4096  4-Dec-2024 16:44 rust_tutos
+  221879 -rw-r--r--  1000   1000       112 15-Nov-2024 06:51 il_scam.txt
+  221872 drwxr-xr-x  1000   1000      4096  8-Dec-2024 18:37 raiju
+   16406 drwxr-xr-x  1000   1000      4096  4-Dec-2024 10:54 c_mnist_nn
+  210181 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:02 cgol
+  221182 -rw-r--r--  1000   1000       210  9-Dec-2024 17:01 .wget-hsts
+
+dir_partition inode=210181
+   P ext4                     0   0  1 133674 172  2 2147483648
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 1099 GB / 1024 GiB
+Directory /home/ruthis/cgol
+  210181 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:02 .
+     686 drwxr-x---  1000   1000      4096  9-Dec-2024 18:50 ..
+  210185 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:01 cgol_rs
+   88442 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:05 cgol_c
+  191077 drwxr-xr-x  1000   1000      4096  9-Dec-2024 18:02 c_tui_trial
+
+dir_partition inode=88442
+   P ext4                     0   0  1 133674 172  2 2147483648
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 1099 GB / 1024 GiB
+Directory /home/ruthis/cgol/cgol_c
+   88442 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:05 .
+  210181 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:02 ..
+  210288 -rw-r--r--  1000   1000       991  9-Dec-2024 18:11 main.c
+  225277 -rwxr-xr-x  1000   1000     78120  9-Dec-2024 19:01 cgol
+   88500 -rw-r--r--  1000   1000      7262  9-Dec-2024 10:26 grid.c
+  210410 -rw-r--r--  1000   1000       352  9-Dec-2024 17:56 grid.h
+   88507 -rw-r--r--  1000   1000    126916  9-Dec-2024 17:37 termbox2.h.lib
+  210280 -rw-r--r--  1000   1000    126916  9-Dec-2024 17:54 termbox2.h
+  226504 -rwxr-xr-x  1000   1000     78120  9-Dec-2024 18:52 cgol_c
+  225581 -rw-r--r--     0      0      6666  9-Dec-2024 19:07 testdisk.log
+Directory /home/ruthis/cgol
+  210181 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:02 .
+     686 drwxr-x---  1000   1000      4096  9-Dec-2024 18:50 ..
+  210185 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:01 cgol_rs
+   88442 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:05 cgol_c
+  191077 drwxr-xr-x  1000   1000      4096  9-Dec-2024 18:02 c_tui_trial
+Directory /home/ruthis
+     686 drwxr-x---  1000   1000      4096  9-Dec-2024 18:50 .
+   24577 drwxr-xr-x     0      0      4096  5-Oct-2024 19:54 ..
+    1227 -rw-r--r--  1000   1000      4066  6-Oct-2024 10:12 .bashrc
+   46418 -rw-r--r--  1000   1000       828  5-Oct-2024 19:55 .profile
+   46421 -rw-r--r--  1000   1000       220  5-Oct-2024 19:54 .bash_logout
+   46406 drwx------  1000   1000      4096  6-Dec-2024 20:13 .cache
+   46423 -rw-r--r--  1000   1000         0  9-Dec-2024 08:29 .motd_shown
+   46426 drwxr-xr-x  1000   1000      4096  9-Dec-2024 18:57 .cargo
+   46434 drwxr-xr-x  1000   1000      4096  5-Oct-2024 19:55 .rustup
+  210257 -rw-------  1000   1000     25418  9-Dec-2024 18:50 .bash_history
+   46417 -rw-r--r--  1000   1000         0  5-Oct-2024 20:24 .sudo_as_admin_successful
+    3758 drwxr-xr-x  1000   1000      4096  6-Dec-2024 08:30 arch_tegra
+    1709 -rw-r--r--  1000   1000        80 12-Oct-2024 08:45 .gitconfig
+   89965 drwxr-xr-x  1000   1000      4096  7-Oct-2024 13:08 .config
+   90036 drwx------  1000   1000      4096  5-Oct-2024 20:31 .local
+  204034 -rw-------  1000   1000        67  8-Dec-2024 18:16 .git-credentials
+  130266 drwxr-xr-x  1000   1000      4096  6-Oct-2024 10:02 .espup
+  126220 drwxr-xr-x  1000   1000      4096  5-Oct-2024 22:59 local
+  302701 -rw-------  1000   1000      1273  6-Dec-2024 17:58 .viminfo
+   46409 drwxr-xr-x  1000   1000      4096  6-Oct-2024 09:05 .landscape
+  129976 -rw-r--r--  1000   1000       226  6-Oct-2024 10:11 export-esp.sh
+   12578 drwxr-xr-x  1000   1000      4096 19-Nov-2024 14:15 esp_cam
+   10836 drwxr-xr-x  1000   1000      4096  6-Dec-2024 17:58 .vim
+   89909 drwxr-xr-x  1000   1000      4096  7-Dec-2024 09:32 c_tuto
+  302718 drwxr-x---  1000   1000      4096  6-Dec-2024 20:15 .lldb
+  263312 -rw-------  1000   1000        20  3-Dec-2024 09:17 .lesshst
+  186766 drwxr-xr-x  1000   1000      4096  4-Dec-2024 16:44 rust_tutos
+  221879 -rw-r--r--  1000   1000       112 15-Nov-2024 06:51 il_scam.txt
+  221872 drwxr-xr-x  1000   1000      4096  8-Dec-2024 18:37 raiju
+   16406 drwxr-xr-x  1000   1000      4096  4-Dec-2024 10:54 c_mnist_nn
+  210181 drwxr-xr-x  1000   1000      4096  9-Dec-2024 19:02 cgol
+  221182 -rw-r--r--  1000   1000       210  9-Dec-2024 17:01 .wget-hsts
+Directory /home
+   24577 drwxr-xr-x     0      0      4096  5-Oct-2024 19:54 .
+       2 drwxr-xr-x     0      0      4096  9-Dec-2024 14:50 ..
+     686 drwxr-x---  1000   1000      4096  9-Dec-2024 18:50 ruthis
+Directory /
+       2 drwxr-xr-x     0      0      4096  9-Dec-2024 14:50 .
+       2 drwxr-xr-x     0      0      4096  9-Dec-2024 14:50 ..
+      11 drwx------     0      0     16384  5-Oct-2024 19:43 lost+found
+      12 lrwxrwxrwx     0      0         7 22-Apr-2024 15:08 bin
+    8193 drwxr-xr-x     0      0      4096 26-Feb-2024 13:58 bin.usr-is-merged
+    8194 drwxr-xr-x     0      0      4096 22-Apr-2024 15:08 boot
+   16385 drwxr-xr-x     0      0      4096 27-Sep-2024 22:12 dev
+   16386 drwxr-xr-x     0      0      4096  9-Dec-2024 19:04 etc
+   24577 drwxr-xr-x     0      0      4096  5-Oct-2024 19:54 home
+    1395 lrwxrwxrwx     0      0         7 22-Apr-2024 15:08 lib
+   24578 drwxr-xr-x     0      0      4096  8-Apr-2024 16:37 lib.usr-is-merged
+    1396 lrwxrwxrwx     0      0         9 22-Apr-2024 15:08 lib64
+   32769 drwxr-xr-x     0      0      4096 27-Sep-2024 22:13 media
+   32770 drwxr-xr-x     0      0      4096  5-Oct-2024 19:43 mnt
+   40961 drwxr-xr-x     0      0      4096 27-Sep-2024 22:13 opt
+   40962 drwxr-xr-x     0      0      4096 22-Apr-2024 15:08 proc
+   49153 drwx------     0      0      4096  6-Dec-2024 18:09 root
+   49154 drwxr-xr-x     0      0      4096 27-Sep-2024 22:13 run
+    1424 lrwxrwxrwx     0      0         8 22-Apr-2024 15:08 sbin
+   57345 drwxr-xr-x     0      0      4096 31-Mar-2024 11:00 sbin.usr-is-merged
+   57346 drwxr-xr-x     0      0      4096  5-Oct-2024 19:43 snap
+   65537 drwxr-xr-x     0      0      4096 27-Sep-2024 22:13 srv
+   65538 drwxr-xr-x     0      0      4096 22-Apr-2024 15:08 sys
+   73729 drwxrwxrwt     0      0     12288  9-Dec-2024 19:10 tmp
+   73730 drwxr-xr-x     0      0      4096  1-Dec-2024 08:59 usr
+ 33554433 drwxr-xr-x     0      0      4096  1-Dec-2024 18:45 var
+ 33554600 drwx------     0      0      4096  9-Oct-2024 16:01 wslomiKjl
+ 33554644 drwx------     0      0      4096  9-Oct-2024 16:01 wslmllmnl
+ 33557364 drwx------     0      0      4096  9-Oct-2024 16:01 wslkEEJpl
+ 33557412 drwx------     0      0      4096  9-Oct-2024 16:01 wsllCIoBm
+ 33557413 drwx------     0      0      4096  9-Oct-2024 16:01 wslAmJECm
+   46384 -rwxr-xr-x     0      0         0  9-Dec-2024 14:50 init
+ 33557428 drwx------     0      0      4096 30-Oct-2024 10:06 wslNpLHcJ
+ 33557439 drwx------     0      0      4096 30-Oct-2024 10:06 wslKjkgiJ
+ 33557610 drwx------     0      0      4096 30-Oct-2024 10:06 wslAehnnJ
+ 33557666 drwx------     0      0      4096 30-Oct-2024 10:06 wslcgikBK
+ 33557668 drwx------     0      0      4096 30-Oct-2024 10:06 wslIihLDK
+   88954 lrwxrwxrwx     0      0         9  1-Dec-2024 08:59 lib32
+Change partition type:
+   P ext4                     0   0  1 133674 172  2 2147483648
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 1099 GB / 1024 GiB
+
+TestDisk exited normally.
