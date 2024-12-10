@@ -190,13 +190,8 @@ impl Iterator for Grid {
                 }
             }
         }
-        let num_alive = new_grid.alive_count();
-        if num_alive == 0 {
-            None
-        } else {
-            *self = new_grid.clone();       
-            Some(new_grid)
-        }
+        *self = new_grid;       
+        Some(self.clone())
     } 
 }
 

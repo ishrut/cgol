@@ -8,3 +8,7 @@ The algorithm implemented in both languages are the same, although I tried to do
 A TUI application is also made to visualise the cells and advance to the next frame.
 In rust the ratatui crate was used and in C termbox2.h was used.
 In this way, I can compare the work done to solve the same problem in both languages.
+
+### Usage
+Build the binaries and then run.
+Right arrow to advance to next frame and any other key to exit.
