@@ -3,8 +3,8 @@
 
 ### Usage
 
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make
-$ ./bin/cgol_c
+* $ mkdir build
+* $ cd build
+* $ cmake ..
+* $ make
+* $ ./bin/cgol_c
