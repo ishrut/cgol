@@ -1,7 +1,4 @@
-use ratatui::{
-    crossterm::event::{self, KeyCode, KeyEventKind},
-    DefaultTerminal,
-};
+use ratatui::crossterm::event::{self, KeyCode, KeyEventKind};
 mod grid;
 use grid::Grid;
 
@@ -9,10 +6,12 @@ fn main() -> std::io::Result<()> {
     let mut terminal = ratatui::init();
     terminal.clear()?;
 
+    //initialising the grid
     let tui_size = terminal.size()?;
     let tui_rows = tui_size.width;
     let tui_cols = tui_size.height;
     let mut grid = Grid::new(tui_rows.into(), tui_cols.into());
+    //setting initial states
     grid.set(vec![
         (4, 2), 
         (4, 3),
@@ -21,17 +20,9 @@ fn main() -> std::io::Result<()> {
         (2, 3),
     ]);
 
-    let app_result = run(terminal, &mut grid);
-
-    ratatui::restore();
-    app_result
-}
-
-fn run(mut terminal: DefaultTerminal, grid: &mut Grid) -> std::io::Result<()> {
-
     loop {
         terminal.draw(|frame| {
-            frame.render_widget(&mut *grid, frame.area());
+            frame.render_widget( &grid, frame.area());
         })?;
 
         if let event::Event::Key(key) = event::read()? {
@@ -42,5 +33,7 @@ fn run(mut terminal: DefaultTerminal, grid: &mut Grid) -> std::io::Result<()> {
             }
         }
     }
+
+    ratatui::restore();
     Ok(())
 }

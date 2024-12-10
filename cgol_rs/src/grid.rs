@@ -34,7 +34,6 @@ impl Grid {
                 self.data[item.0][item.1] = true;
             }
         }
-
     }
 
     pub fn alive_count(&self) -> usize {
@@ -201,7 +200,7 @@ impl Iterator for Grid {
     } 
 }
 
-impl Widget for &mut Grid {
+impl Widget for &Grid {
     fn render(self, _area: ratatui::prelude::Rect, buf: &mut ratatui::prelude::Buffer) {
         for i in 0..self.rows as u16 {
             for j in 0..self.cols as u16 {
