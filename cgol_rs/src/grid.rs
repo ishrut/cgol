@@ -78,8 +78,8 @@ impl Grid {
 }
 
 impl Iterator for Grid {
-    type Item = Grid;
-    fn next(&mut self) -> Option<Self::Item> {
+    type Item = Self;
+    fn next(&mut self) -> Option<Self> {
         let mut new_grid = Self::new(self.rows, self.cols);
         for i in 0..self.rows {
             for j in 0..self.cols {

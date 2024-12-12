@@ -2,4 +2,6 @@
 ---
 
 ### Usage
-$ cargo run --release
+In the project's folder run the following. Ensure that that you have rustup installed. 
+
+* $ cargo run --release
