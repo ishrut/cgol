@@ -3,7 +3,7 @@ use ratatui::{
     backend::CrosstermBackend, Terminal
 };
 use crossterm::{
-    event::{DisableMouseCapture, EnableMouseCapture, MouseEventKind}, 
+    event::{DisableMouseCapture, EnableMouseCapture, MouseEventKind, Event}, 
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen}, 
     ExecutableCommand
 };
@@ -37,42 +37,11 @@ fn main() -> std::io::Result<()> {
 
         let new_event = event::read()?;
 
-        match app_state {
-            AppState::Set => {
-                match new_event {
-                    event::Event::Mouse(mouse) => {
-                        match mouse.kind {
-                            MouseEventKind::Down(button) => {
-                                match button {
-                                    event::MouseButton::Left => {
-                                        grid.set(vec![(mouse.column as usize, mouse.row as usize)])
-                                    }
-                                    _ => {}
-                                }
-                            }
-                            _ => {}
-                        }
-                    }
-                    event::Event::Key(key) => {
-                        if key.kind == KeyEventKind::Press && key.code == KeyCode::Enter {
-                            app_state = AppState::Next;
-                        }
-                    }
-                    _ => {}
-                }
-            },
-            AppState::Next => {
-                match new_event {
-                    event::Event::Key(key) => {
-                        if key.kind == KeyEventKind::Press && key.code == KeyCode::Right {
-                            grid.next();
-                        } else {
-                            break;
-                        }
-                    }
-                    _ => {}
-                }
-
+        if let AppState::Set = app_state {
+            handle_set_events(new_event, &mut grid, &mut app_state);
+        } else {
+            if let None = handle_next_events(new_event, &mut grid) {
+                break;
             }
         }
     }
@@ -83,4 +52,29 @@ fn main() -> std::io::Result<()> {
     terminal.show_cursor()?;
     ratatui::restore();
     Ok(())
+}
+
+fn handle_set_events(event: Event, grid: &mut Grid, app_state: &mut AppState) {
+    if let event::Event::Mouse(mouse) = event {
+        if let MouseEventKind::Down(button) = mouse.kind {
+            if let event::MouseButton::Left = button {
+                grid.set(vec![(mouse.column as usize, mouse.row as usize)])
+            }
+        }
+    } else if let event::Event::Key(key) = event {
+        if key.kind == KeyEventKind::Press && key.code == KeyCode::Enter {
+            *app_state = AppState::Next;
+        }
+    }
+}
+
+fn handle_next_events(event: Event, grid: &mut Grid) -> Option<()> {
+    if let event::Event::Key(key) = event {
+        if key.kind == KeyEventKind::Press && key.code == KeyCode::Right {
+            grid.next();
+        } else {
+            return None;
+        }
+    }
+    Some(())
 }
