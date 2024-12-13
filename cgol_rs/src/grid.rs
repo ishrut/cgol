@@ -47,7 +47,7 @@ impl Grid {
         }
         alive
     }
-    
+
     fn get_alive(data: Vec<&bool>) -> usize {
         let mut alive = 0;
         for item in data {
@@ -61,17 +61,17 @@ impl Grid {
     fn get_new_state(state: &bool, alive: usize) -> bool {
         if *state == true {
             if alive < 2 {
-                return false
+                return false;
             } else if alive == 2 || alive == 3 {
-                return true
+                return true;
             } else {
-                return false
+                return false;
             }
         } else {
             if alive == 3 {
-                return true
+                return true;
             } else {
-                return *state
+                return *state;
             }
         }
     }
@@ -89,29 +89,29 @@ impl Iterator for Grid {
                     if j == 0 {
                         //check top left element
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j+1],
-                            &self.data[i+1][j],
-                            &self.data[i+1][j+1],
+                            &self.data[i][j + 1],
+                            &self.data[i + 1][j],
+                            &self.data[i + 1][j + 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
                     } else if j == self.cols - 1 {
                         //check for top right element
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j-1],
-                            &self.data[i+1][j],
-                            &self.data[i+1][j-1],
+                            &self.data[i][j - 1],
+                            &self.data[i + 1][j],
+                            &self.data[i + 1][j - 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
                     } else {
                         //check for top middle elements
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j-1],
-                            &self.data[i][j+1],
-                            &self.data[i+1][j-1],
-                            &self.data[i+1][j],
-                            &self.data[i+1][j+1],
+                            &self.data[i][j - 1],
+                            &self.data[i][j + 1],
+                            &self.data[i + 1][j - 1],
+                            &self.data[i + 1][j],
+                            &self.data[i + 1][j + 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
@@ -121,29 +121,29 @@ impl Iterator for Grid {
                     if j == 0 {
                         //check for bottom left element
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j+1],
-                            &self.data[i-1][j],
-                            &self.data[i-1][j+1],
+                            &self.data[i][j + 1],
+                            &self.data[i - 1][j],
+                            &self.data[i - 1][j + 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
-                    } else if j == self.cols -1 {
+                    } else if j == self.cols - 1 {
                         //check for bottom right element
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j-1],
-                            &self.data[i-1][j],
-                            &self.data[i-1][j-1],
+                            &self.data[i][j - 1],
+                            &self.data[i - 1][j],
+                            &self.data[i - 1][j - 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
                     } else {
                         //check for bottom middle elements
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j+1],
-                            &self.data[i][j-1],
-                            &self.data[i-1][j-1],
-                            &self.data[i-1][j],
-                            &self.data[i-1][j+1],
+                            &self.data[i][j + 1],
+                            &self.data[i][j - 1],
+                            &self.data[i - 1][j - 1],
+                            &self.data[i - 1][j],
+                            &self.data[i - 1][j + 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
@@ -153,36 +153,36 @@ impl Iterator for Grid {
                     if j == 0 {
                         //check for middle left element
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j+1],
-                            &self.data[i-1][j],
-                            &self.data[i-1][j+1],
-                            &self.data[i+1][j],
-                            &self.data[i+1][j+1],
+                            &self.data[i][j + 1],
+                            &self.data[i - 1][j],
+                            &self.data[i - 1][j + 1],
+                            &self.data[i + 1][j],
+                            &self.data[i + 1][j + 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
                     } else if j == self.cols - 1 {
                         //check for middle right element
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j-1],
-                            &self.data[i-1][j],
-                            &self.data[i-1][j-1],
-                            &self.data[i+1][j],
-                            &self.data[i+1][j-1],
+                            &self.data[i][j - 1],
+                            &self.data[i - 1][j],
+                            &self.data[i - 1][j - 1],
+                            &self.data[i + 1][j],
+                            &self.data[i + 1][j - 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
                     } else {
                         //check for middle middle elements
                         let alive = Self::get_alive(vec![
-                            &self.data[i][j+1],
-                            &self.data[i][j-1],
-                            &self.data[i-1][j-1],
-                            &self.data[i-1][j],
-                            &self.data[i-1][j+1],
-                            &self.data[i+1][j-1],
-                            &self.data[i+1][j],
-                            &self.data[i+1][j+1],
+                            &self.data[i][j + 1],
+                            &self.data[i][j - 1],
+                            &self.data[i - 1][j - 1],
+                            &self.data[i - 1][j],
+                            &self.data[i - 1][j + 1],
+                            &self.data[i + 1][j - 1],
+                            &self.data[i + 1][j],
+                            &self.data[i + 1][j + 1],
                         ]);
                         let new_state = Self::get_new_state(&self.data[i][j], alive);
                         new_grid.data[i][j] = new_state;
@@ -190,9 +190,9 @@ impl Iterator for Grid {
                 }
             }
         }
-        *self = new_grid;       
+        *self = new_grid;
         Some(self.clone())
-    } 
+    }
 }
 
 impl Widget for &Grid {

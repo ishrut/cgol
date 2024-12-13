@@ -1,11 +1,12 @@
-use ratatui::{
-    crossterm::event::{self, KeyCode, KeyEventKind}, 
-    backend::CrosstermBackend, Terminal
-};
 use crossterm::{
-    event::{DisableMouseCapture, EnableMouseCapture, MouseEventKind, Event}, 
-    terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen}, 
-    ExecutableCommand
+    event::{DisableMouseCapture, EnableMouseCapture, Event, MouseEventKind},
+    terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
+    ExecutableCommand,
+};
+use ratatui::{
+    backend::CrosstermBackend,
+    crossterm::event::{self, KeyCode, KeyEventKind},
+    Terminal,
 };
 mod grid;
 use grid::Grid;
@@ -18,7 +19,7 @@ enum AppState {
 fn main() -> std::io::Result<()> {
     enable_raw_mode()?;
     std::io::stdout().execute(EnterAlternateScreen)?;
-    std::io::stdout().execute(EnableMouseCapture)?; 
+    std::io::stdout().execute(EnableMouseCapture)?;
     let backend = CrosstermBackend::new(std::io::stdout());
     let mut terminal = Terminal::new(backend)?;
     terminal.clear()?;
@@ -32,7 +33,7 @@ fn main() -> std::io::Result<()> {
     let mut app_state = AppState::Set;
     loop {
         terminal.draw(|frame| {
-            frame.render_widget( &grid, frame.area());
+            frame.render_widget(&grid, frame.area());
         })?;
 
         let new_event = event::read()?;
