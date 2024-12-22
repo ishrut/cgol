@@ -26,9 +26,7 @@ fn main() -> std::io::Result<()> {
 
     //initialising the grid
     let tui_size = terminal.size()?;
-    let tui_rows = tui_size.width;
-    let tui_cols = tui_size.height;
-    let mut grid = Grid::new(tui_rows.into(), tui_cols.into());
+    let mut grid = Grid::new(tui_size.width.into(), tui_size.height.into());
 
     let mut app_state = AppState::Set;
     loop {
