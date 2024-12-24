@@ -20,8 +20,10 @@ Grid grid_init(int rows, int cols) {
 void grid_free(Grid* grid) {
     for (int i=0; i<grid->rows; i++) {
         free(grid->data[i]);
+        grid->data[i] = NULL;
     }
     free(grid->data);
+    grid->data = NULL;
 }
 
 int grid_set(Grid* grid, int x, int y) {
